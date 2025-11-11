@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:17.6-trixie
+    container_name: learn-postgres
+
+    # Environment variables: create user, password, and database
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: supersecurepass
+      POSTGRES_DB: learning
+
+    # Save data ./data folder
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+    ports:
+      - "5432:5432"
