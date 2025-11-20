@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "workbench.colorCustomizations": {
+    "sash.hoverBorder": "#c4fc93",
+    "titleBar.activeBackground": "#c4fc93",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#c4fc9399",
+    "titleBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#c4fc93",
+    "activityBarBadge.foreground": "#15202b",
+  }
+}

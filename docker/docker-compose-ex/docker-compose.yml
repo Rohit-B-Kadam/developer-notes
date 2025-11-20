@@ -1,0 +1,32 @@
+services:
+  node:
+    build: .
+    ports:
+      - 8080:8080
+    develop:         # For executing develop add --watch option
+      watch:
+        - action: sync
+          path: .
+          target: /app
+          ignore:
+            - node_modules/
+            - drizzle/
+            - .git/
+        - action: rebuild
+          path: package.json
+        - action: rebuild
+          path: package-lock.json
+  
+  db:
+    image: postgres:13-trixie
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=mysecretroot
+      - POSTGRES_DB=product
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+volumes:
+  dbdata:
